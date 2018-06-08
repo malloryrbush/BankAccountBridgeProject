@@ -14,6 +14,8 @@ namespace BankAccountBridgeProject
         public string TypeChecking { get; set; }
         public string TypeSavings { get; set; }
         public double Deposit { get; set; }
+        public int Interaction { get; set; }
+        public int Interest { get; set; } 
 
         public double GetBalance()
         {
@@ -35,5 +37,23 @@ namespace BankAccountBridgeProject
             getWithdrawal = (Balance - withdrawalAmt);
             return getWithdrawal;
         }
+
+        public virtual void Tick()
+        {
+            Interaction++;
+        }
+
+        public virtual void AddInterest()
+        {
+            Interaction = 0;
+            Interaction = Interaction + 1;
+            if (Interaction % 3 == 0)
+            {
+                Tick();
+            }
+            else { }
+
+        }
+    
     }
 }

@@ -8,13 +8,13 @@ namespace BankAccountBridgeProject
 {
     class Savings : Account
     {
-        //double newWithdrawalBal;
         public double newWithdrawalBal { get; set; }
 
-        public Savings(int acctNum, double balance)
+        public Savings(int acctNum, double balance, int interest)
         {
             this.AcctNum = acctNum;
             this.Balance = balance;
+            this.Interest = interest;
         }
 
         public override double GetDeposit(double depositAmt)
@@ -29,6 +29,11 @@ namespace BankAccountBridgeProject
             double getWithdrawal;
             getWithdrawal = (newWithdrawalBal - withdrawalAmt);
             return getWithdrawal;
+        }
+
+        public override void Tick()
+        {
+            Interest--;
         }
 
     }

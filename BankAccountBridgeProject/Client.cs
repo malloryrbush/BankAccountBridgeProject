@@ -18,5 +18,10 @@ namespace BankAccountBridgeProject
             this.Address = Address;
             this.PhoneNumber = PhoneNumber;
         }
+
+        public abstract class AddAccount
+        {
+
+        }
     }
 }
