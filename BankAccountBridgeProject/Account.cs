@@ -29,7 +29,7 @@ namespace BankAccountBridgeProject
             return getDeposit;
         }
 
-        public double GetWithdrawal(double withdrawalAmt)
+        public virtual double GetWithdrawal(double withdrawalAmt)
         {
             double getWithdrawal;
             getWithdrawal = (Balance - withdrawalAmt);

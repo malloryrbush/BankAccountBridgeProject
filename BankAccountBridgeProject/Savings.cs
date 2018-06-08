@@ -8,6 +8,9 @@ namespace BankAccountBridgeProject
 {
     class Savings : Account
     {
+        //double newWithdrawalBal;
+        public double newWithdrawalBal { get; set; }
+
         public Savings(int acctNum, double balance)
         {
             this.AcctNum = acctNum;
@@ -17,10 +20,16 @@ namespace BankAccountBridgeProject
         public override double GetDeposit(double depositAmt)
         {
             double getDeposit;
-            getDeposit = (SavingsBalance + depositAmt);
+            getDeposit = (Balance + depositAmt);
             return getDeposit;
+        }
+
+        public override double GetWithdrawal(double withdrawalAmt)
+        {
+            double getWithdrawal;
+            getWithdrawal = (newWithdrawalBal - withdrawalAmt);
+            return getWithdrawal;
         }
 
     }
 }
-
